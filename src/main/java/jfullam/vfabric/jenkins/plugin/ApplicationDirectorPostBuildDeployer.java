@@ -355,9 +355,9 @@ public class ApplicationDirectorPostBuildDeployer extends BuildWrapper {
 		public boolean configure(StaplerRequest req, JSONObject formData)
 				throws FormException {
 
-			appDirBaseURI = formData.getString("appDirBaseURI");
-			userName = formData.getString("userName");
-			password = formData.getString("password");
+			appDirBaseURI = formData.getJSONObject("vfabric").getString("appDirBaseURI");
+			userName = formData.getJSONObject("vfabric").getString("userName");
+			password = formData.getJSONObject("vfabric").getString("password");
 			try {
 				ServiceManager
 						.configureApplicationDirectorClient(appDirBaseURI,
